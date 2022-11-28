@@ -25,7 +25,7 @@ namespace E_commerceApi.Controllers
         [HttpGet("servererror")]
         public ActionResult GetServerErrort()
         {
-            var thing = _context.Products.Find(1);
+            var thing = _context.Products.Find(42);
 
             var thingToReturn = thing.ToString();
             
