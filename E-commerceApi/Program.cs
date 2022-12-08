@@ -1,14 +1,9 @@
-using Core.Interfaces;
-using E_commerceApi.Errors;
 using E_commerceApi.Extensions;
 using E_commerceApi.Helpers;
 using E_commerceApi.Middleware;
 using Infrastructure.Data;
-using Infrastructure.Repositories;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Hosting;
+using StackExchange.Redis;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +12,11 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddAutoMapper(typeof(MappingProfiles));
 builder.Services.AddDbContext<StoreContext>(x => x.UseSqlite("Data Source=skinet.db"));
+builder.Services.AddSingleton<IConnectionMultiplexer>(c =>
+{
+    var configuration = ConfigurationOptions.Parse("localhost", true);
+    return ConnectionMultiplexer.Connect(configuration);
+});
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddApplicationServices();
 builder.Services.AddEndpointsApiExplorer();

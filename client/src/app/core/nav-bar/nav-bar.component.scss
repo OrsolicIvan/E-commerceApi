@@ -1,0 +1,32 @@
+.cart-no {
+    position: absolute;
+    min-height: 25px;
+    min-width: 25px;
+    border-radius: 50%;
+    font-size: 1em;
+    background-color: blue;
+    color: white;
+    text-align: center;
+    top: -12px;
+    right: 15px;
+}
+.fa-shopping-cart{
+    margin-right: 30px;
+}
+.login{
+    margin-right: 2px;
+}
+.signin{
+    margin-right: 4px;
+}
+a {
+    text-decoration: none;
+    color: #343a40;
+
+    &.active{
+        color: orange;
+    }
+}
+.logo{
+    cursor: pointer;
+}
