@@ -1,0 +1,20 @@
+<div class="bg-light px-4 py-3 text-uppercase font-weight-bold">
+    Sazetak narudzbe
+</div>
+<div class="p-4">
+    <p class="font-italic mb-4">Cijena dostave ce varirati u odnosu na odabire tijekom checkouta</p>
+    <ul class="list-unstyled mb-4" *ngIf="(basketTotal$ | async) as totals">
+        <li class="d-flex justify-content-between py-3 border-bottom">
+            <strong class="text-muted">Cijena artikala</strong>
+            <strong>{{totals.subtotal | currency}}</strong>
+        </li>
+        <li class="d-flex justify-content-between py-3 border-bottom">
+            <strong class="text-muted">Dostava</strong>
+            <strong>{{totals.shipping | currency}}</strong>
+        </li>
+        <li class="d-flex justify-content-between py-3 border-bottom">
+            <strong class="text-muted">Total</strong>
+            <strong>{{totals.total | currency}}</strong>
+        </li>
+    </ul>
+</div>
