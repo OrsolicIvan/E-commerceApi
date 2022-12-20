@@ -1,4 +1,5 @@
 ﻿using Core.Models;
+using Core.Models.OrderAggregate;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -14,15 +15,15 @@ namespace Infrastructure.Data
     {
         public static async Task SeedAsync(StoreContext context, ILoggerFactory loggerFactory)
         {
-            try 
+            try
             {
                 if (!context.ProductBrands.Any())
                 {
                     var brandsData = File.ReadAllText("../Infrastructure/Data/SeedData/brands.json");
 
                     var brands = JsonSerializer.Deserialize<List<ProductBrand>>(brandsData);
-                    
-                    foreach(var item in brands)
+
+                    foreach (var item in brands)
                     {
                         context.ProductBrands.Add(item);
                     }
@@ -52,12 +53,24 @@ namespace Infrastructure.Data
                     }
                     await context.SaveChangesAsync();
                 }
+                if (!context.DeliveryMethods.Any())
+                {
+                    var dmData = File.ReadAllText("../Infrastructure/Data/SeedData/delivery.json");
+
+                    var methods = JsonSerializer.Deserialize<List<DeliveryMethod>>(dmData);
+
+                    foreach (var item in methods)
+                    {
+                        context.DeliveryMethods.Add(item);
+                    }
+                    await context.SaveChangesAsync();
+                }
             }
             catch (Exception ex)
             {
                 var logger = loggerFactory.CreateLogger<StoreContextSeed>();
                 logger.LogError(ex.Message);
             }
-            }
+        }
     }
 }
