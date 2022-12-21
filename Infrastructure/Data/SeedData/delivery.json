@@ -1,30 +1,30 @@
 [
   {
     "Id": 1,
-    "ShortName": "UPS1",
-    "Description": "Fastest delivery time",
-    "DeliveryTime": "1-2 Days",
+    "ShortName": "EuroExpress",
+    "Description": "Najbrža dostava",
+    "DeliveryTime": "1 do 2 Dana",
     "Price": 10
   },
   {
     "Id": 2,
-    "ShortName": "UPS2",
-    "Description": "Get it within 5 days",
-    "DeliveryTime": "2-5 Days",
+    "ShortName": "BH pošta",
+    "Description": "Dolazi kroz 5 dana",
+    "DeliveryTime": "2 do 5 Dana",
     "Price": 5
   },
   {
     "Id": 3,
-    "ShortName": "UPS3",
-    "Description": "Slower but cheap",
-    "DeliveryTime": "5-10 Days",
+    "ShortName": "a2b",
+    "Description": "Spora ali jeftina",
+    "DeliveryTime": "5 do 10 Dana",
     "Price": 2
   },
   {
     "Id": 4,
-    "ShortName": "FREE",
-    "Description": "Free! You get what you pay for",
-    "DeliveryTime": "1-2 Weeks",
+    "ShortName": "Besplatno",
+    "Description": "Besplatna dostava",
+    "DeliveryTime": "1 do 2 Tjedna",
     "Price": 0
   }
 ]

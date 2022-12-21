@@ -1,0 +1,66 @@
+<div class="mt-4" [formGroup]="checkoutForm">
+  <div class="d-flex justify-content-between align-item-center">
+    <h4>Adresa</h4>
+    <button
+      (click)="saveUserAddress()"
+      [disabled]="
+        !checkoutForm.get('addressForm').valid ||
+        !checkoutForm.get('addressForm').dirty"
+      class="btn btn-outline-success mb-3"
+    >
+      Spremi adresu
+    </button>
+  </div>
+  <div class="row" formGroupName="addressForm">
+    <div class="form-group col-6">
+      <app-text-input
+        [label]="'Ime'"
+        formControlName="firstName"
+      ></app-text-input
+      ><br />
+    </div>
+    <div class="form-group col-6">
+      <app-text-input
+        [label]="'Prezime'"
+        formControlName="lastName"
+      ></app-text-input>
+    </div>
+    <div class="form-group col-6">
+      <app-text-input
+        [label]="'Ulica'"
+        formControlName="street"
+      ></app-text-input
+      ><br />
+    </div>
+    <div class="form-group col-6">
+      <app-text-input [label]="'Grad'" formControlName="city"></app-text-input>
+    </div>
+    <div class="form-group col-6">
+      <app-text-input
+        [label]="'Mjesto'"
+        formControlName="state"
+      ></app-text-input>
+    </div>
+    <div class="form-group col-6">
+      <app-text-input
+        [label]="'Postanski broj'"
+        formControlName="zipCode"
+      ></app-text-input>
+    </div>
+  </div>
+</div>
+<br />
+<div
+  class="float-none d-flex justify-content-between flex-column flex-lg-row mb-5"
+>
+  <button class="btn btn-outline-primary" routerLink="/basket">
+    <i class="fa fa-angle-left"></i> Nazad na kosaru
+  </button>
+  <button
+    class="btn btn-primary"
+    cdkStepperNext
+    [disabled]="!checkoutForm.get('addressForm').valid"
+  >
+    Idi na dostavu <i class="fa fa-angle-right"></i>
+  </button>
+</div>
