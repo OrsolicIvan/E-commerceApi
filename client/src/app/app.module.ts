@@ -11,6 +11,7 @@ import { HomeModule } from './home/home.module';
 import { ErrorInterceptor } from './core/interceptors/error.interceptor';
 import { NgxSpinner, NgxSpinnerModule } from 'ngx-spinner';
 import { JwtInterceptor } from './core/interceptors/jwt.interceptor';
+import { OrderHistoryComponent } from './order-history/order-history.component';
 
 @NgModule({
   declarations: [

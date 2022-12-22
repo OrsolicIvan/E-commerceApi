@@ -1,0 +1,46 @@
+    <div class="container">
+        <div class="table-responsive mt-5">
+            <table class="table table-hover" style="cursor: pointer;">
+              <thead class="thead-light">
+                <tr>
+                  <th class="border-0" scope="col">
+                    <div class="p-2 px-3 text-uppercase">Artikal</div>
+                  </th>
+                  <th scope="col " class="border-0">
+                    <div class="py-2 text-uppercase">Datum</div>
+                  </th>
+                  <th scope="col " class="border-0">
+                    <div class="py-2 text-uppercase">Cijena</div>
+                  </th>
+                  <th scope="col " class="border-0">
+                    <div class="py-2 text-uppercase">Status</div>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let order of orders" routerLink="/orders/{{order.id}}">
+                  <th scope="row">
+                    <div class="p-2">
+                      <div class="ml-3 d-inline-block align-middle">
+                        <span  class="mb-0">
+                          #{{ order.id }}
+                        </span>
+                      </div>
+                    </div>
+                  </th>
+                  <td>
+                    <span class="text-muted font-weight=normal font-italic d-block">{{
+                      order.orderDate | date: 'dd/MM/yyyy'
+                    }}</span>
+                  </td>
+                  <td class="align-middle">
+                    <strong>{{ order.total | currency }}</strong>
+                  </td>
+                  <td class="align-middle">
+                    <strong>{{ order.status }}</strong>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+    </div>

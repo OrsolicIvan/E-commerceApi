@@ -18,5 +18,7 @@ export class CheckoutSuccessComponent implements OnInit {
     }
   }
 
-  ngOnInit() {}
+  ngOnInit(): void {
+
+  }
 }
