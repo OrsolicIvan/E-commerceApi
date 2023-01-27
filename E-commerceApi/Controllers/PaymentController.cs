@@ -12,7 +12,7 @@ namespace E_commerceApi.Controllers
     {
         private readonly IPaymentService _paymentService;
         private readonly ILogger<PaymentController> _logger;
-        private const string WhSecret = "whsec_b901522e1ca10aeee3d105063cdfa55bcff090ebd0590a7ea9ba3749385901e2";
+        private const string WhSecret = "";
 
         public PaymentController(IPaymentService paymentService, ILogger<PaymentController> logger)
         {
