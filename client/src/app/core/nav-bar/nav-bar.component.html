@@ -19,7 +19,7 @@
 
             <div class="dropdown" dropdown>
                 <a class="dropdown-toggle" style="cursor: pointer" dropdownToggle>
-                <strong>Dobrodošao {{(currentUser$ | async).displayName}}</strong>
+                <strong>Dobrodošao {{(currentUser$ | async).displayName | titlecase}}</strong>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" style="cursor: pointer;" *dropdownMenu>
                     <a routerLink="/basket" class="dropdown-item d-flex align-items-center py-2">

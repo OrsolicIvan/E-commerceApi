@@ -17,7 +17,7 @@ namespace Infrastructure.Identity
                 var user = new AppUser
                 {
                     DisplayName = "Bob",
-                    Email = "bob@gmail.com",
+                    Email = "bob@test.com",
                     UserName = "Bob",
                     Address = new Address
                     {

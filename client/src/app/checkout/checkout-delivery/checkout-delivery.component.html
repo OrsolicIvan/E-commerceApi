@@ -22,7 +22,7 @@
   <button class="btn btn-outline-primary" cdkStepperPrevious>
       <i class="fa fa-angle-left"></i> Nazad na adresu
   </button>
-  <button class="btn btn-primary" cdkStepperNext [disabled]="!checkoutForm.get('deliveryForm').valid">
+  <button class="btn btn-primary" cdkStepperNext [disabled]="checkoutForm.get('deliveryForm').invalid">
       Idi na pregled <i class="fa fa-angle-right"></i> 
   </button>
 </div>
